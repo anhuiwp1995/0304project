@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+        
+        html,
+        body,
+        .box {
+            height: 100%;
+        }
+        /* 只有 html,
+        body, height: 100%;其他的  height: 100%;才能撑开 */
+        
+        .box {
+            display: flex;
+            flex-direction: column;
+            /* flex-direction: column;让盒子竖着排 */
+            display: -webkit-flex;
+            -ms-flex-direction: column;
+            position: relative;
+        }
+        
+        .box header {
+            height: 0.8rem;
+            background: black;
+        }
+        
+        .box div {
+            flex: 1;
+            background: yellow;
+        }
+        
+        .box .green {
+            background: green;
+        }
+        
+        button {
+            font-size: 40px;
+        }
+        
+        .box .mask {
+            height: 100%;
+            position: absolute;
+            width: 100%;
+            left: 0;
+            top: 0;
+            background: rgba(0, 0, 0, 0.5);
+            display: none;
+        }
+        
+        .box .con {
+            width: 80%;
+            height: 300px;
+            background: #fff;
+            position: absolute;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+            /* left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto; 
+            定位的居中*/
+        }
+    </style>
+    <script src="../启辰移动端作业/js/remScale.js"></script>
+</head>
+
+<body>
+    <div class="box">
+        <header></header>
+        <div>
+            <button>点击</button>
+        </div>
+
+        <div class="mask">
+            <div class="con"></div>
+        </div>
+
+    </div>
+    <script src='js/rem.js'></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script>
+        $(function() {
+            $('button').click(function() {
+                $('.mask').fadeIn(400);
+            })
+            $('.con').click(function() {
+                $('.mask').slideUp(400);
+            })
+        })
+    </script>
+</body>
+
+</html>
